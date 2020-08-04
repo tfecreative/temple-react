@@ -1,0 +1,67 @@
+$bg: "bg";
+$text: "text";
+$brand: "brand";
+$btn-primary-fg: "btn-primary-fg";
+$btn-primary-bg: "btn-primary-bg";
+$link: "link";
+$link-active: "link-active";
+
+$bg--light: #ffffff;
+$text--light: #000000;
+$btn-primary-bg--light: #1b4332;
+$btn-primary-fg--light: #ffffff;
+$link--light: #000000;
+$link-active--light: #1b4332;
+$brand--light: #1b4332;
+
+$bg--dark: #333333;
+$text--dark: #25b26f;
+$btn-primary-bg--dark: #95d5b2;
+$btn-primary-fg--dark: #000000;
+$link--dark: #000000;
+$link-active--dark: #c70502;
+$brand--dark: #1b4332;
+
+$gray-100: #f8f9fa;
+$gray-200: #dee2e6;
+$gray-300: #dedede;
+$gray-400: #6c757d;
+$gray-500: #495057;
+
+$themes: (
+  light: (
+    bg: $bg--light,
+    text: $text--light,
+    btn-primary-bg: $btn-primary-bg--light,
+    btn-primary-fg: $btn-primary-fg--light,
+    brand: $brand--light,
+  ),
+  dark: (
+    bg: $bg--dark,
+    text: $text--dark,
+    brand: $brand--dark,
+  ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

@@ -1,0 +1,60 @@
+@import "variables/colors";
+@import "variables/sizes";
+@import "variables/typography";
+@import "mixins/breakpoints";
+
+.navbar {
+  display: flex;
+  padding: $spacing-sm;
+}
+
+.navbar-menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0 0 0 $spacing-lg;
+  padding: 0;
+
+  @include xs {
+    flex-direction: row;
+  }
+
+  &__item {
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: $spacing-xs;
+    }
+
+    @include xs {
+      margin-right: $spacing-lg;
+
+      &:not(:last-of-type) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .navbar-menu-link {
+    text-decoration: none;
+
+    @include themed() {
+      color: t($link);
+    }
+
+    &.is-active {
+      @include themed() {
+        color: t($link-active);
+      }
+    }
+  }
+
+  a:-webkit-any-link {
+    text-decoration: none;
+  }
+}
