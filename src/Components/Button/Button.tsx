@@ -1,14 +1,21 @@
 import React from "react";
 import "./Button.scss";
 
+type ButtonType = "button" | "submit";
+
 export interface Props {
   theme: string;
-  onClick: (e: any) => void;
+  onClick?: (e: any) => void;
   children?: any;
+  disabled: boolean;
+  type?: ButtonType;
 }
 
 const Button = (props: Props) => {
   function handleClick(event: Event) {
+    if (!props.onClick) {
+      return;
+    }
     event.preventDefault();
     props.onClick(event);
   }
@@ -16,7 +23,7 @@ const Button = (props: Props) => {
     <button
       onClick={() => handleClick}
       className={"btn btn-" + props.theme}
-      type="button"
+      type={props.type}
     >
       {props.children}
     </button>
@@ -24,3 +31,7 @@ const Button = (props: Props) => {
 };
 
 export default Button;
+
+Button.defaultProps = {
+  type: "button",
+};

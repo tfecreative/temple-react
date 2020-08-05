@@ -6,6 +6,7 @@
 .navbar {
   display: flex;
   padding: $spacing-sm;
+  background-color: clr('primary');
 }
 
 .navbar-menu {
@@ -42,6 +43,9 @@
 
   .navbar-menu-link {
     text-decoration: none;
+    color: clr('accent');
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
 
     @include themed() {
       color: t($link);

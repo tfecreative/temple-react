@@ -1,3 +1,35 @@
+// Colors
+$primary: #6A040F;
+$secondary: #5d78ff;
+$accent: #FFBA08;
+$offwhite: #FCFCFF;
+
+$lighten: 5;
+$darken: 25;
+
+$colors: (
+  primary: (
+    base: $primary,
+    light: lighten($primary, $lighten),
+    dark: darken($primary, $darken),
+  ),
+  secondary: (
+    base: $secondary,
+    light: lighten($secondary, $lighten),
+    dark: darken($secondary, $darken),
+  ),
+  accent: (
+    base: $accent,
+    light: lighten($accent, $lighten),
+    dark: darken($accent, $darken),
+  ),
+);
+
+@function clr($base, $shade: base) {
+  $color: map-get(map-get($colors, $base), $shade);
+  @return $color;
+}
+
 $bg: "bg";
 $text: "text";
 $brand: "brand";
@@ -22,12 +54,6 @@ $link--dark: #000000;
 $link-active--dark: #c70502;
 $brand--dark: #1b4332;
 
-$gray-100: #f8f9fa;
-$gray-200: #dee2e6;
-$gray-300: #dedede;
-$gray-400: #6c757d;
-$gray-500: #495057;
-
 $themes: (
   light: (
     bg: $bg--light,
@@ -39,6 +65,8 @@ $themes: (
   dark: (
     bg: $bg--dark,
     text: $text--dark,
+    btn-primary-bg: $btn-primary-bg--dark,
+    btn-primary-fg: $btn-primary-fg--dark,
     brand: $brand--dark,
   ),
 );

@@ -1,0 +1,12 @@
+@import "variables/colors";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: $offwhite;
+  height: 400px;
+  min-height: 400px;
+  width: 300px;
+  border: 1px solid black;
+}
