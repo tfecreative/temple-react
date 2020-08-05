@@ -3,9 +3,11 @@ import { render } from "@testing-library/react";
 import Button from "./Button";
 import { Props } from "./Button";
 
+
 const defaultProps: Props = {
   theme: "primary",
   onClick: jest.fn(),
+  disabled: false,
 };
 
 test("button renders with terrible pun", () => {
