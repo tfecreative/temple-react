@@ -2,6 +2,7 @@ import React from "react";
 import About from "About/About";
 import Home from "Home/Home";
 import Navbar from "Navbar/Navbar";
+import SignIn from "SignIn/SignIn";
 import AppHeader from "Layout/AppHeader/AppHeader";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "App/App.scss";
@@ -16,6 +17,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
+            <Route exact path="/sign-in" component={SignIn} />
           </Switch>
         </div>
       </div>

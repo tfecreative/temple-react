@@ -25,6 +25,15 @@ function Navbar() {
             About
           </NavLink>
         </li>
+        <li className="navbar-menu__item">
+          <NavLink
+            to="/sign-in"
+            className="navbar-menu-link"
+            activeClassName="is-active"
+          >
+            Sign In
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
