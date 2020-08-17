@@ -1,14 +1,14 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Label from "./Label";
-import { Props } from "./Label";
+import { Label } from "Components/Label/Label";
+import { Props } from "Components/Label/Label";
 
 
 const defaultProps: Props = {
-  htmlFor: 'testing'
+  id: 'test-label'
 };
 
 test("label renders", () => {
-  const { getByText } = render(<Label {...defaultProps}>hoya there</Label>);
-  expect(getByText("hoya there")).toBeTruthy();
+  const { getByText } = render(<Label {...defaultProps}>test label</Label>);
+  expect(getByText("test label")).toBeTruthy();
 });

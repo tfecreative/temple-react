@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import { FormError } from "Components/Form/FormError";
+import { Label } from "Components/Label/Label";
 
 type Input = {
   label: string;
@@ -21,9 +22,9 @@ export const FormInput = ({
 
   return (
     <div>
-      <label className="label" htmlFor={name}>
+      <Label id={name}>
         {label}
-      </label>
+      </Label>
       <input
         id={name}
         name={name}
