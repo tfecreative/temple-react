@@ -4,15 +4,16 @@ import Button from "Components/Button/Button";
 
 type FormButton = {
   children: React.ReactNode;
+  theme: string;
 };
 
-export const FormButton = ({ children }: FormButton) => {
+export const FormButton = ({ children, theme }: FormButton) => {
   const {
     formState: { isDirty, isSubmitting },
   } = useFormContext();
 
   return (
-    <Button theme="primary" type="submit" disabled={!isDirty || isSubmitting}>
+    <Button theme={theme} type="submit" disabled={!isDirty || isSubmitting}>
       {children}
     </Button>
   );

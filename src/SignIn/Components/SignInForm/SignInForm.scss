@@ -1,7 +1,16 @@
+@import "variables/borders";
+@import "variables/colors";
 @import "variables/sizes";
 
 .sign-in-form {
   width: 300px;
-  border: 1px solid black;
-  padding: $spacing-sm;
+  border: $border-thick $black;
+  border-radius: $border-radius;
+  padding: $spacing-md;
+  display: flex;
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
 }

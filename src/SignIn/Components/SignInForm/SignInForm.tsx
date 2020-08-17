@@ -1,6 +1,7 @@
 import React from "react";
 import "./SignInForm.scss";
 import { Form } from "Components/Form/Form";
+import { FormHeader } from "Components/Form/FormHeader";
 import { FormInput } from "Components/FormInput/FormInput";
 import { FormButton } from "Components/Form/FormButton";
 
@@ -11,28 +12,11 @@ const SignInForm = () => {
 
   return (
     <Form onSubmit={handleSubmit} className="sign-in-form">
-      <div>
-        <FormInput name="FirstName" label="First Name" />
-      </div>
-      <div>
-        <FormInput name="lastName" label="Last Name" />
-      </div>
-      <div>
-        <FormInput
-          name="email"
-          label="Email"
-          type="email"
-          validation={{
-            required: true,
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-              message: "Invalid email",
-            },
-          }}
-        />
-      </div>
-      <div>
-        <FormButton>Submit</FormButton>
+      <FormHeader text="Sign In"></FormHeader>
+      <FormInput name="Username" label="Username" />
+      <FormInput name="Password" label="Password" />
+      <div className="form-actions">
+        <FormButton theme="accent">Submit</FormButton>
       </div>
     </Form>
   );
