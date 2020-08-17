@@ -1,8 +1,10 @@
 // Colors
-$primary: #6A040F;
-$secondary: #5d78ff;
-$accent: #FFBA08;
-$offwhite: #FCFCFF;
+$primary: #fffbcd;
+$secondary: #9B4E2A;
+$accent: #fdd121;
+$black: #000000;
+$white: #ffffff;
+$offwhite: #fcfcff;
 
 $lighten: 5;
 $darken: 25;
@@ -33,6 +35,8 @@ $colors: (
 $bg: "bg";
 $text: "text";
 $brand: "brand";
+$btn-accent-fg: "btn-accent-fg";
+$btn-accent-bg: "btn-accent-bg";
 $btn-primary-fg: "btn-primary-fg";
 $btn-primary-bg: "btn-primary-bg";
 $link: "link";
@@ -40,7 +44,9 @@ $link-active: "link-active";
 
 $bg--light: #ffffff;
 $text--light: #000000;
-$btn-primary-bg--light: #1b4332;
+$btn-accent-bg--light: clr("accent");
+$btn-accent-fg--light: $black;
+$btn-primary-bg--light: clr("primary");
 $btn-primary-fg--light: #ffffff;
 $link--light: #000000;
 $link-active--light: #1b4332;
@@ -48,6 +54,8 @@ $brand--light: #1b4332;
 
 $bg--dark: #333333;
 $text--dark: #25b26f;
+$btn-accent-bg--dark: clr("accent");
+$btn-accent-fg--dark: $black;
 $btn-primary-bg--dark: #95d5b2;
 $btn-primary-fg--dark: #000000;
 $link--dark: #000000;
@@ -58,6 +66,8 @@ $themes: (
   light: (
     bg: $bg--light,
     text: $text--light,
+    btn-accent-bg: $btn-accent-bg--light,
+    btn-accent-fg: $btn-accent-fg--light,
     btn-primary-bg: $btn-primary-bg--light,
     btn-primary-fg: $btn-primary-fg--light,
     brand: $brand--light,
@@ -65,6 +75,8 @@ $themes: (
   dark: (
     bg: $bg--dark,
     text: $text--dark,
+    btn-accent-bg: $btn-accent-bg--dark,
+    btn-accent-fg: $btn-accent-fg--dark,
     btn-primary-bg: $btn-primary-bg--dark,
     btn-primary-fg: $btn-primary-fg--dark,
     brand: $brand--dark,
