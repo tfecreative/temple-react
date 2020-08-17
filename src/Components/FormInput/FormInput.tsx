@@ -2,6 +2,7 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 import { FormError } from "Components/Form/FormError";
 import { Label } from "Components/Label/Label";
+import "./FormInput.scss";
 
 type Input = {
   label: string;
@@ -21,15 +22,13 @@ export const FormInput = ({
   const { register, errors } = useFormContext();
 
   return (
-    <div>
-      <Label id={name}>
-        {label}
-      </Label>
+    <div className="form-input">
+      <Label id={name}>{label}</Label>
       <input
         id={name}
         name={name}
         type={type}
-        className="input"
+        className="text-input"
         ref={register(validation || defaultValidation)}
       />
       <div>{errors[name] && <FormError error={errors[name]} />}</div>

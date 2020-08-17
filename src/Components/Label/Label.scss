@@ -1,7 +1,8 @@
-@import "variables/colors";
 @import "variables/sizes";
 @import "variables/typography";
 
 .label {
-  font-size: $font-size-lg;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-xxs;
 }
