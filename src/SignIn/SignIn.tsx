@@ -1,11 +1,12 @@
 import React from "react";
 import SignInForm from "SignIn/Components/SignInForm/SignInForm";
+import "./SignIn.scss";
 
 function SignIn() {
   return (
-    <div>
+    <section className="section section-sign-in">
       <SignInForm></SignInForm>
-    </div>
+    </section>
   );
 }
 
