@@ -5,12 +5,15 @@ import Navbar from "Navbar/Navbar";
 import SignIn from "SignIn/SignIn";
 import AppHeader from "Layout/AppHeader/AppHeader";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import "App/App.scss";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <Router>
       <div id="app" className="App theme--light">
+        <ToastContainer />
         <AppHeader />
         <Navbar />
         <div id="site-content" className="site-content">

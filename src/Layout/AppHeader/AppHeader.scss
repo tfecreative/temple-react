@@ -4,6 +4,7 @@
 
 .app-header {
   display: flex;
+  align-items: center;
   justify-content: center;
   background-color: clr("primary");
   height: 40px;
@@ -13,6 +14,6 @@
 .app-title {
   font-weight: $font-weight-bold;
   font-size: $font-size-lg;
-  color: clr("secondary");
+  color: $black;
   text-transform: uppercase;
 }
