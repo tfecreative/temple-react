@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { Label } from "Components/Label/Label";
-import { Props } from "Components/Label/Label";
+import { Label } from "components/Label/Label";
+import { Props } from "components/Label/Label";
 
 
 const defaultProps: Props = {

@@ -1,4 +1,4 @@
-import { HttpClient } from "Services/Http/HttpClient";
+import { HttpClient } from "services/Http/HttpClient";
 import { SignInRequest, SignInResponse } from "./Types";
 
 export class AccountService extends HttpClient {

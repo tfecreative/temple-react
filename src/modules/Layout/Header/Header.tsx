@@ -1,7 +1,7 @@
 import React from "react";
-import "./AppHeader.scss";
+import "./Header.scss";
 
-function AppHeader() {
+function Header() {
   return (
     <header className="app-header">
       <span className="app-title">temple</span>
@@ -9,4 +9,4 @@ function AppHeader() {
   );
 }
 
-export default AppHeader;
+export default Header;

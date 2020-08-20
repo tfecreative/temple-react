@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
-import { FormError } from "Components/Form/FormError";
-import { Label } from "Components/Label/Label";
+import { FormError } from "components/Form/FormError";
+import { Label } from "components/Label/Label";
 import "./FormInput.scss";
 
 type Input = {

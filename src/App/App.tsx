@@ -1,10 +1,10 @@
 import React from "react";
-import About from "About/About";
-import Home from "Home/Home";
-import Navbar from "Navbar/Navbar";
-import SignIn from "SignIn/SignIn";
-import AppHeader from "Layout/AppHeader/AppHeader";
-import Account from "Account/Account";
+import About from "modules/About/About";
+import Home from "modules/Home/Home";
+import Navbar from "modules/Navbar/Navbar";
+import SignIn from "modules/SignIn/SignIn";
+import Header from "modules/Layout/Header/Header";
+import Account from "modules/Account/Account";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "App/App.scss";
@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div id="app" className="App theme--light">
         <ToastContainer />
-        <AppHeader />
+        <Header />
         <Navbar />
         <div id="site-content" className="site-content">
           <Switch>

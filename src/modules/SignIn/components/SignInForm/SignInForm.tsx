@@ -1,10 +1,10 @@
 import React from "react";
 import "./SignInForm.scss";
-import { Form } from "Components/Form/Form";
-import { FormHeader } from "Components/Form/FormHeader";
-import { FormInput } from "Components/FormInput/FormInput";
-import { FormButton } from "Components/Form/FormButton";
-import { accountService, SignInRequest } from "Services/Account";
+import { Form } from "components/Form/Form";
+import { FormHeader } from "components/Form/FormHeader";
+import { FormInput } from "components/FormInput/FormInput";
+import { FormButton } from "components/Form/FormButton";
+import { accountService, SignInRequest } from "services/Account";
 import { toast } from "react-toastify";
 
 const SignInForm = () => {
