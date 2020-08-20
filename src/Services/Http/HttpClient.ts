@@ -26,10 +26,11 @@ export abstract class HttpClient {
   /**
    * Axios response error interceptor
    *
+   * @params Error from axios response
    * @returns Error message from request or default message
    */
-  private handleError(err: AxiosError<Error>) {
-    return Promise.reject(new HttpError(err?.response?.data?.message));
+  private handleError(err: AxiosError<any>) {
+    return Promise.reject(new HttpError(err?.response?.data?.error));
   }
 
   /**
