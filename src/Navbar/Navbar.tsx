@@ -34,6 +34,15 @@ function Navbar() {
             Sign In
           </NavLink>
         </li>
+        <li className="navbar-menu__item">
+          <NavLink
+            to="/account"
+            className="navbar-menu-link"
+            activeClassName="is-active"
+          >
+            Account
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
