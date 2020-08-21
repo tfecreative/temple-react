@@ -18,9 +18,8 @@ export default function configureStore(
     (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   const store = createStore(
     createRootReducer(history),
-    /* preloadedState, */ composeEnhancers(
-      applyMiddleware(routerMiddleware(history), thunk)
-    )
+    initialState,
+    composeEnhancers(applyMiddleware(routerMiddleware(history), thunk))
   );
   /* eslint-enable */
   return store;

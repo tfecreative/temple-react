@@ -15,7 +15,7 @@ const reducer: Reducer<AuthState> = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        user: action.payload,
+        auth: action.payload,
       };
     }
     case ActionTypes.SIGN_IN_FAILURE: {
@@ -24,7 +24,7 @@ const reducer: Reducer<AuthState> = (state = initialState, action) => {
         ...state,
         loading: false,
         errors: action.payload,
-        user: { token: "heyyyy" },
+        auth: { token: "heyyyy" },
       };
     }
     default: {
@@ -32,4 +32,4 @@ const reducer: Reducer<AuthState> = (state = initialState, action) => {
     }
   }
 };
-export { reducer as UserReducer };
+export { reducer as AuthReducer };
