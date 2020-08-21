@@ -7,12 +7,12 @@ import { UserReducer } from "./user/reducer";
 import { UserState } from "./user/types";
 
 export interface ApplicationState {
-  user: UserState;
+  userState: UserState;
   router: RouterState;
 }
 
 export const createRootReducer = (history: History) =>
   combineReducers({
-    user: UserReducer,
+    userState: UserReducer,
     router: connectRouter(history),
   });

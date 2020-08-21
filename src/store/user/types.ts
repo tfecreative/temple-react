@@ -3,13 +3,13 @@ export interface User {
 }
 
 export enum ActionTypes {
-  SIGN_IN_REQUEST = "@@user/SIGN_IN_REQUEST",
+  SIGN_IN = "@@user/SIGN_IN",
   SIGN_IN_SUCCESS = "@@user/SIGN_IN_SUCCESS",
-  SIGN_IN_ERROR = "@@user/SIGN_IN_ERROR",
+  SIGN_IN_FAILURE = "@@user/SIGN_IN_FAILURE",
 }
 
 export interface UserState {
   readonly loading: boolean;
-  readonly data?: User;
+  readonly user: User;
   readonly errors?: string;
 }
