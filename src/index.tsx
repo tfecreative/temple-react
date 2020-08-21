@@ -5,6 +5,7 @@ import App from "./App/App";
 import * as serviceWorker from "./serviceWorker";
 import { createBrowserHistory } from "history";
 import configureStore from "store/store.config";
+
 const history = createBrowserHistory();
 
 const initialState: any = {};
