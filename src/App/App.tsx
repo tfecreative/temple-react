@@ -6,13 +6,11 @@ import Header from "modules/Layout/Header/Header";
 
 import { ApplicationState } from "store";
 import { Provider } from "react-redux";
-
-import { BrowserRouter as Router } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { Store } from "redux";
 import { History } from "history";
 import { ConnectedRouter } from "connected-react-router";
-import Routes from "./routes";
+import Routes from "./Routes";
 import "App/App.scss";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -24,18 +22,16 @@ interface MainProps {
 const App: React.FC<MainProps> = ({ store, history }) => {
   return (
     <Provider store={store}>
-      <Router>
+      <ConnectedRouter history={history}>
         <div id="app" className="App theme--light">
           <ToastContainer />
           <Header />
           <Navbar />
           <div id="site-content" className="site-content">
-            <ConnectedRouter history={history}>
-              <Routes />
-            </ConnectedRouter>
+            <Routes />
           </div>
         </div>
-      </Router>
+      </ConnectedRouter>
     </Provider>
   );
 };
