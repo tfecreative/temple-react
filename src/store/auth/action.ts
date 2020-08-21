@@ -1,4 +1,4 @@
-import { ActionTypes, User } from "./types";
+import { ActionTypes, Auth } from "./types";
 import { ActionCreator, Action, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { ApplicationState } from "store";
@@ -11,7 +11,7 @@ export type AppThunk = ActionCreator<
 export const signIn: ActionCreator<ThunkAction<
   Promise<Action>,
   ApplicationState,
-  User,
+  Auth,
   Action<string>
 >> = (username: string, password: string) => {
   return async (dispatch: Dispatch): Promise<Action> => {

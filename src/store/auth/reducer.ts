@@ -1,14 +1,14 @@
 import { Reducer } from "redux";
-import { ActionTypes, UserState } from "./types";
+import { ActionTypes, AuthState } from "./types";
 import { toast } from "react-toastify";
 
-export const initialState: UserState = {
-  user: { token: "" },
+export const initialState: AuthState = {
+  auth: { token: "" },
   errors: undefined,
   loading: false,
 };
 
-const reducer: Reducer<UserState> = (state = initialState, action) => {
+const reducer: Reducer<AuthState> = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.SIGN_IN_SUCCESS: {
       toast.success("signed in success!");

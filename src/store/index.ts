@@ -3,16 +3,16 @@ import { connectRouter, RouterState } from "connected-react-router";
 
 import { History } from "history";
 
-import { UserReducer } from "./user/reducer";
-import { UserState } from "./user/types";
+import { AuthReducer } from "./auth/reducer";
+import { AuthState } from "./auth/types";
 
 export interface ApplicationState {
-  userState: UserState;
+  auth: AuthState;
   router: RouterState;
 }
 
 export const createRootReducer = (history: History) =>
   combineReducers({
-    userState: UserReducer,
+    auth: AuthReducer,
     router: connectRouter(history),
   });
