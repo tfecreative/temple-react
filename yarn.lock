@@ -1521,7 +1521,7 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/history@*":
+"@types/history@*", "@types/history@^4.7.7":
   version "4.7.7"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.7.tgz#613957d900fab9ff84c8dfb24fa3eef0c2a40896"
   integrity sha512-2xtoL22/3Mv6a70i4+4RB7VgbDDORoWwjcqeNysojZA0R7NK17RbY5Gof/2QiFfJgX+KkWghbwJ+d/2SB8Ndzg==
@@ -9302,6 +9302,11 @@ redent@^3.0.0:
   dependencies:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
+
+redux-devtools-extension@^2.13.8:
+  version "2.13.8"
+  resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.8.tgz#37b982688626e5e4993ff87220c9bbb7cd2d96e1"
+  integrity sha512-8qlpooP2QqPtZHQZRhx3x3OP5skEV1py/zUdMY28WNAocbafxdG2tRD1MWE7sp8obGMNYuLWanhhQ7EQvT1FBg==
 
 redux-thunk@^2.3.0:
   version "2.3.0"
