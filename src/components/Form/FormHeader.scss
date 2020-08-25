@@ -1,0 +1,9 @@
+@import "variables/colors";
+@import "variables/sizes";
+@import "variables/typography";
+
+.form-header {
+  color: $black;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-sm;
+}

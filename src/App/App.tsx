@@ -1,28 +1,39 @@
 import React from "react";
-import About from "About/About";
-import Home from "Home/Home";
-import Navbar from "Navbar/Navbar";
-import SignIn from "SignIn/SignIn";
-import AppHeader from "Layout/AppHeader/AppHeader";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "App/App.scss";
 
-function App() {
-  return (
-    <Router>
-      <div id="app" className="App theme--light">
-        <AppHeader />
-        <Navbar />
-        <div id="site-content" className="site-content">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/sign-in" component={SignIn} />
-          </Switch>
-        </div>
-      </div>
-    </Router>
-  );
+import Navbar from "modules/Navbar/Navbar";
+
+import Header from "modules/Layout/Header/Header";
+
+import { ApplicationState } from "store";
+import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import { Store } from "redux";
+import { History } from "history";
+import { ConnectedRouter } from "connected-react-router";
+import Routes from "./Routes";
+import "App/App.scss";
+import "react-toastify/dist/ReactToastify.css";
+
+export interface MainProps {
+  store: Store<ApplicationState>;
+  history: History;
 }
+
+const App: React.FC<MainProps> = ({ store, history }) => {
+  return (
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <div id="app" className="App theme--light">
+          <ToastContainer/>
+          <Header />
+          <Navbar />
+          <div id="site-content" className="site-content">
+            <Routes />
+          </div>
+        </div>
+      </ConnectedRouter>
+    </Provider>
+  );
+};
 
 export default App;

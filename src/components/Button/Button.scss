@@ -1,0 +1,30 @@
+@import "variables/colors";
+@import "variables/sizes";
+@import "variables/typography";
+
+.btn {
+  outline: none;
+  border: 0;
+  padding: $spacing-xs $spacing-sm;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  min-width: 100px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn-primary {
+  @include themed() {
+    color: t($btn-primary-fg);
+    background: t($btn-primary-bg);
+  }
+}
+
+.btn-accent {
+  @include themed() {
+    color: t($btn-accent-fg);
+    background: t($btn-accent-bg);
+  }
+}

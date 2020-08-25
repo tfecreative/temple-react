@@ -1,0 +1,7 @@
+{
+  "testFiles": "**/*.cy.ts",
+  "integrationFolder": "./cypress/integration/",
+  "baseUrl": "http://localhost:3000",
+  "viewportWidth": 700,
+  "viewportHeight": 700
+}

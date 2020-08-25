@@ -1,0 +1,19 @@
+@import "variables/colors";
+@import "variables/sizes";
+@import "variables/borders";
+@import "variables/typography";
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-md;
+}
+
+.text-input {
+  border: $border clr("accent", "dark");
+  border-radius: $input-border-radius;
+  padding: $spacing-xs $spacing-sm;
+  background-color: $white;
+  color: $black;
+  font-weight: $font-weight-semibold;
+}
