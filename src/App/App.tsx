@@ -14,7 +14,7 @@ import Routes from "./Routes";
 import "App/App.scss";
 import "react-toastify/dist/ReactToastify.css";
 
-interface MainProps {
+export interface MainProps {
   store: Store<ApplicationState>;
   history: History;
 }
@@ -24,7 +24,7 @@ const App: React.FC<MainProps> = ({ store, history }) => {
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <div id="app" className="App theme--light">
-          <ToastContainer />
+          <ToastContainer/>
           <Header />
           <Navbar />
           <div id="site-content" className="site-content">
