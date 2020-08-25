@@ -24,7 +24,7 @@ const reducer: Reducer<AuthState> = (state = initialState, action) => {
         ...state,
         loading: false,
         errors: action.payload,
-        auth: { token: "heyyyy" },
+        auth: { token: "" },
       };
     }
     default: {

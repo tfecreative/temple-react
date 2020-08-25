@@ -36,6 +36,15 @@ function Navbar() {
         </li>
         <li className="navbar-menu__item">
           <NavLink
+            to="/sign-up"
+            className="navbar-menu-link"
+            activeClassName="is-active"
+          >
+            Sign Up
+          </NavLink>
+        </li>
+        <li className="navbar-menu__item">
+          <NavLink
             to="/account"
             className="navbar-menu-link"
             activeClassName="is-active"

@@ -24,7 +24,7 @@ export const signIn: ActionCreator<ThunkAction<
 
       return dispatch({
         type: ActionTypes.SIGN_IN_SUCCESS,
-        payload: response
+        payload: response,
       });
     } catch (e) {
       return dispatch({
