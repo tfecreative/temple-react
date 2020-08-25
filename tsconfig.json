@@ -19,5 +19,5 @@
     "typeRoots": ["./support"]
   },
   "include": ["src", "**/*.ts"],
-  "exclude": ["**/*.cy.ts"]
+  // "exclude": ["**/*.cy.ts"]
 }
