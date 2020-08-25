@@ -11,7 +11,7 @@ export const initialState: AuthState = {
 const reducer: Reducer<AuthState> = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.SIGN_IN_SUCCESS: {
-      toast.success("signed in success!");
+      toast.success("Welcome!");
       return {
         ...state,
         loading: false,
@@ -19,7 +19,7 @@ const reducer: Reducer<AuthState> = (state = initialState, action) => {
       };
     }
     case ActionTypes.SIGN_IN_FAILURE: {
-      toast.error("signed in failed!");
+      toast.error("sign in failed!");
       return {
         ...state,
         loading: false,
