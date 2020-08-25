@@ -5,6 +5,7 @@ import { Props } from "./Button";
 
 
 const defaultProps: Props = {
+  id: "testbutton",
   theme: "primary",
   onClick: jest.fn(),
   disabled: false,

@@ -28,6 +28,7 @@ export const FormInput = ({
         id={name}
         name={name}
         type={type}
+        data-cy={name}
         className="text-input"
         ref={register(validation || defaultValidation)}
       />

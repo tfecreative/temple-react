@@ -9,6 +9,7 @@ export interface Props {
   children?: any;
   disabled: boolean;
   type?: ButtonType;
+  id: string;
 }
 
 const Button = (props: Props) => {
@@ -23,6 +24,8 @@ const Button = (props: Props) => {
     <button
       onClick={() => handleClick}
       className={"btn btn-" + props.theme}
+      id={props.id}
+      data-cy={props.id}
       type={props.type}
     >
       {props.children}
