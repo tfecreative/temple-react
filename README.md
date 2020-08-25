@@ -1,44 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ⛪ temple
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Event management platform built with React in TypeScript. Includes Redux for state management, unit tests using React Testing Library and e2e tests written with Cypress. See [technologies](#technologies) for details.
 
-### `yarn start`
+## Status
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project is currently in development. The initial focus for development has been on the foundation, setting up a structure for modules, redux, tests.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Build
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
+``` 
+yarn build
+```
 
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Run
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+``` 
+yarn start
+```
 
-### `yarn eject`
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Tests
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+``` 
+yarn test
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Runs unit tests.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+``` 
+yarn cypress
+```
 
-## Learn More
+Run e2e tests with cypress.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [typescript](https://ghub.io/typescript): TypeScript is a language for application scale JavaScript development
+* [react](https://ghub.io/react): React is a JavaScript library for building user interfaces.
+* [redux](https://ghub.io/redux): Predictable state container for JavaScript apps
+* [react-redux](https://ghub.io/react-redux): Official React bindings for Redux
+* [react-testing-library](https://ghub.io/@testing-library/react): Simple and complete React DOM testing utilities that encourage good testing practices.
+* [cypress](https://ghub.io/cypress): end to end testing tool
+* [scss](https://github.com/sass/sass): Sass makes CSS fun again
