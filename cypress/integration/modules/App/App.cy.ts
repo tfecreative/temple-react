@@ -4,5 +4,3 @@ describe("App", () => {
     cy.contains("temple");
   });
 });
-
-export {};

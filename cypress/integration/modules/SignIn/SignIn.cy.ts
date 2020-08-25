@@ -7,5 +7,3 @@ describe("Sign In Form", () => {
     cy.get("div.Toastify").should("have.text", "sign in failed!");
   });
 });
-
-export {};

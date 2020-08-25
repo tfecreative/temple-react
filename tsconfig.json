@@ -18,5 +18,6 @@
     "types": ["cypress"],
     "typeRoots": ["./support"]
   },
-  "include": ["src", "**/*.ts"]
+  "include": ["src", "**/*.ts"],
+  "exclude": ["**/*.cy.ts"]
 }

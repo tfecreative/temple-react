@@ -1,7 +1,6 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import Button from "components/Button/Button";
-import { props } from "cypress/types/bluebird";
 
 type FormButton = {
   children: React.ReactNode;
