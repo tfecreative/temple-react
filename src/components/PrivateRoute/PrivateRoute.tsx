@@ -1,9 +1,9 @@
 import * as React from "react";
 import { connect, ConnectedProps } from "react-redux";
 import { Redirect, Route, RouteProps } from "react-router-dom";
-import { ApplicationState } from "store";
+import { IAppState } from "store/types";
 
-const mapState = (state: ApplicationState) => ({
+const mapState = (state: IAppState) => ({
   authToken: state.auth.auth?.token,
 });
 
