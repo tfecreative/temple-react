@@ -1,19 +1,24 @@
-import { ActionTypes, Auth } from "./types";
+import {
+  ISignInFinishedAction,
+  ISignInFailedAction,
+  ISignInSuccessAction,
+  AuthState,
+} from "./types";
 import { ActionCreator, Action, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
-import { ApplicationState } from "store";
+import { IAppState } from "store/types";
 import { accountService, SignInRequest } from "services/Account";
 
 export type AppThunk = ActionCreator<
-  ThunkAction<void, ApplicationState, null, Action<string>>
+  ThunkAction<void, IAppState, null, Action<string>>
 >;
 
 export const signIn: ActionCreator<ThunkAction<
   Promise<Action>,
-  ApplicationState,
-  Auth,
+  IAppState,
+  AuthState,
   Action<string>
->> = (username: string, password: string) => {
+>> = ({ username, password }) => {
   return async (dispatch: Dispatch): Promise<Action> => {
     try {
       const req: SignInRequest = {
@@ -21,16 +26,22 @@ export const signIn: ActionCreator<ThunkAction<
         password: password,
       };
       const response = await accountService.signIn(req);
-
-      return dispatch({
-        type: ActionTypes.SIGN_IN_SUCCESS,
-        payload: response,
-      });
+      const success: ISignInSuccessAction = {
+        type: "SignInSuccess",
+        auth: {token: response.token },
+      };
+      return dispatch(success);
     } catch (e) {
-      return dispatch({
-        type: ActionTypes.SIGN_IN_FAILURE,
-        payload: null,
-      });
+      const failed: ISignInFailedAction = {
+        type: "SignInFailed",
+        error: e.message,
+      };
+      return dispatch(failed);
+    } finally {
+      const finished: ISignInFinishedAction = {
+        type: "SignInFinished",
+      };
+      return dispatch(finished);
     }
   };
 };

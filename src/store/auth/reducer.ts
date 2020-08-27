@@ -1,30 +1,43 @@
 import { Reducer } from "redux";
-import { ActionTypes, AuthState } from "./types";
-import { toast } from "react-toastify";
+import { AuthState } from "./types";
 
 export const initialState: AuthState = {
   auth: { token: "" },
-  errors: undefined,
+  authenticated: false,
   loading: false,
 };
 
 const reducer: Reducer<AuthState> = (state = initialState, action) => {
   switch (action.type) {
-    case ActionTypes.SIGN_IN_SUCCESS: {
-      toast.success("Welcome!");
+    case "SignInRequest": {
       return {
         ...state,
-        loading: false,
-        auth: action.payload,
+        loading: true,
+        auth: {},
+        authenticated: false,
       };
     }
-    case ActionTypes.SIGN_IN_FAILURE: {
-      toast.error("sign in failed!");
+    case "SignInSuccess": {
       return {
         ...state,
         loading: false,
-        errors: action.payload,
+        auth: action.auth,
+        authenticated: true,
+      };
+    }
+    case "SignInFailed": {
+      return {
+        ...state,
+        loading: false,
         auth: { token: "" },
+        authenticated: false,
+      };
+    }
+    case "SignInFinished": {
+      console.info('finished state', state)
+      return {
+        ...state,
+        loading: false,
       };
     }
     default: {

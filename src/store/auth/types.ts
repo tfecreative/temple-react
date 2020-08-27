@@ -1,15 +1,35 @@
+import { Action } from "redux";
+
 export interface Auth {
   token?: string;
 }
 
-export enum ActionTypes {
-  SIGN_IN = "@@auth/SIGN_IN",
-  SIGN_IN_SUCCESS = "@@auth/SIGN_IN_SUCCESS",
-  SIGN_IN_FAILURE = "@@auth/SIGN_IN_FAILURE",
+export interface ISignInRequestAction extends Action<"SignInRequest"> {
+  type: "SignInRequest";
 }
+
+export interface ISignInSuccessAction extends Action<"SignInSuccess"> {
+  type: "SignInSuccess";
+  auth: Auth;
+}
+
+export interface ISignInFailedAction extends Action<"SignInFailed"> {
+  type: "SignInFailed";
+  error: string;
+}
+
+export interface ISignInFinishedAction extends Action<"SignInFinished"> {
+  type: "SignInFinished";
+}
+
+export type SignUpActions =
+  | ISignInRequestAction
+  | ISignInFailedAction
+  | ISignInSuccessAction
+  | ISignInFinishedAction;
 
 export interface AuthState {
   readonly loading: boolean;
   readonly auth: Auth;
-  readonly errors?: string;
+  readonly authenticated: boolean;
 }
