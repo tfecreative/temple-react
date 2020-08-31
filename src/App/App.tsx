@@ -3,19 +3,18 @@ import React from "react";
 import Navbar from "modules/Navbar/Navbar";
 
 import Header from "modules/Layout/Header/Header";
+import { Notifications } from 'notifications/Components/Notifications'
 
-import { ApplicationState } from "store";
+import { IAppState } from "store/types";
 import { Provider } from "react-redux";
-import { ToastContainer } from "react-toastify";
 import { Store } from "redux";
 import { History } from "history";
 import { ConnectedRouter } from "connected-react-router";
 import Routes from "./Routes";
 import "App/App.scss";
-import "react-toastify/dist/ReactToastify.css";
 
 export interface MainProps {
-  store: Store<ApplicationState>;
+  store: Store<IAppState>;
   history: History;
 }
 
@@ -24,7 +23,7 @@ const App: React.FC<MainProps> = ({ store, history }) => {
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <div id="app" className="App theme--light">
-          <ToastContainer/>
+          <Notifications></Notifications>
           <Header />
           <Navbar />
           <div id="site-content" className="site-content">

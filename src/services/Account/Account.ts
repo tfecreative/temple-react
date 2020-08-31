@@ -1,10 +1,13 @@
 import { HttpClient } from "services/Http/HttpClient";
-import { SignInRequest, SignInResponse } from "./Types";
+import { SignInResponse } from "./Types";
 
 export class AccountService extends HttpClient {
-  public async signIn(credentials: SignInRequest): Promise<SignInResponse> {
+  public async signIn(
+    username: string,
+    password: string
+  ): Promise<SignInResponse> {
     return await this.client
-      .post<SignInResponse>("auth/sign-in/", credentials)
+      .post<SignInResponse>("auth/sign-in/", { username, password })
       .then(({ data }) => data);
   }
 }

@@ -12,7 +12,7 @@ export interface Props {
   id: string;
 }
 
-const Button = (props: Props) => {
+export const Button = (props: Props) => {
   function handleClick(event: Event) {
     if (!props.onClick) {
       return;
@@ -27,14 +27,9 @@ const Button = (props: Props) => {
       id={props.id}
       data-cy={props.id}
       type={props.type}
+      disabled={props.disabled}
     >
       {props.children}
     </button>
   );
-};
-
-export default Button;
-
-Button.defaultProps = {
-  type: "button",
 };
