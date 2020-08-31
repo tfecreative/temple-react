@@ -1,0 +1,23 @@
+@import "variables/colors";
+@import "variables/sizes";
+@import "variables/typography";
+@import "variables/borders";
+
+.notification {
+  width: 180px;
+  height: 60px;
+  border: $border;
+  border-color: clr('accent', 'dark');
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-xs;
+  box-shadow: $box-shadow;
+  background-color: $white;
+  margin-bottom: $spacing-sm;
+
+  .notification-message {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+  }
+}
