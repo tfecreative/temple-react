@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "modules/Navbar/Navbar";
 
 import Header from "modules/Layout/Header/Header";
+import { Notifications } from 'notifications/Components/Notifications'
 
 import { IAppState } from "store/types";
 import { Provider } from "react-redux";
@@ -22,6 +23,7 @@ const App: React.FC<MainProps> = ({ store, history }) => {
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <div id="app" className="App theme--light">
+          <Notifications></Notifications>
           <Header />
           <Navbar />
           <div id="site-content" className="site-content">
