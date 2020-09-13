@@ -1,0 +1,33 @@
+@import "variables/sizes";
+@import "variables/colors";
+@import "variables/borders";
+@import "variables/speeds";
+
+.avatar-badge {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  border: $border-thick clr("accent", "dark");
+  border-radius: 50%;
+  background: lightpink;
+  align-items: center;
+  justify-content: center;
+  transition: border-color $speed-fast;
+
+  &:hover {
+    cursor: pointer;
+    border-color: clr("accent", "light");
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+
+  &__icon-image {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+}
