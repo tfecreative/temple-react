@@ -5,15 +5,22 @@
 .app-header {
   display: flex;
   align-items: center;
-  justify-content: center;
   background-color: clr("primary");
-  height: 40px;
+  height: 80px;
   align-items: center;
-}
+  padding: 0 $spacing-lg;
 
-.app-title {
-  font-weight: $font-weight-bold;
-  font-size: $font-size-lg;
-  color: $black;
-  text-transform: uppercase;
+  &__title {
+    display: flex;
+    flex: 1;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-xl;
+    color: $black;
+    text-transform: uppercase;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
