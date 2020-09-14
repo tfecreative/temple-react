@@ -62,7 +62,7 @@ describe("Notifications", () => {
     );
     await timeout(3);
     expect(dispatched).toEqual([
-      removeNotificationStarted(notification),
+      removeNotificationStarted(notification.id),
       removeNotificationCompleted(notification),
     ]);
   });

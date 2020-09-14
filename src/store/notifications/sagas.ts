@@ -20,7 +20,7 @@ function* watchNewAddNotificationsStarted() {
 export function* handleTimeout(notification: Notification) {
   if (notification.options.timeout) {
     yield delay(notification.options.timeout);
-    yield put(removeNotificationStarted(notification));
+    yield put(removeNotificationStarted(notification.id));
     yield put(removeNotificationCompleted(notification));
   }
 }
