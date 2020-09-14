@@ -1,6 +1,8 @@
 @import "variables/sizes";
+@import "variables/z_index";
 
 .notifications {
+  z-index: $z-index-4;
   position: absolute;
   right: $spacing-sm;
   top: $spacing-sm;
