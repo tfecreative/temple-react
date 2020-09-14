@@ -1,16 +1,22 @@
 @import "variables/borders";
 @import "variables/colors";
 @import "variables/sizes";
+@import "mixins/breakpoints";
 
 .sign-in-form {
-  width: 300px;
+  width: 200px;
+  max-width: 200px;
   border: $border-thick $black;
   border-radius: $border-radius;
   padding: $spacing-md;
-  display: flex;
 
   .form-actions {
     display: flex;
     justify-content: flex-end;
+  }
+
+  @include sm {
+    width: 300px;
+    max-width: 300px;
   }
 }

@@ -1,5 +1,6 @@
 @import "variables/sizes";
 
 .section-sign-in {
-  display: block;
+  display: flex;
+  justify-content: center;
 }
