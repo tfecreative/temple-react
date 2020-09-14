@@ -3,7 +3,7 @@ import { routerMiddleware } from "connected-react-router";
 import { History } from "history";
 import { createRootReducer } from "store/reducers";
 import { sagaMiddleware } from "store/middleware";
-import { rootSaga } from "store/sagas";
+// import { rootSaga } from "store/sagas";
 import { IAppState } from "store/types";
 
 export default function configureStore(
@@ -19,7 +19,7 @@ export default function configureStore(
     composeEnhancers(applyMiddleware(routerMiddleware(history), sagaMiddleware))
   );
 
-  sagaMiddleware.run(rootSaga);
+  // sagaMiddleware.run(rootSaga);
   /* eslint-enable */
   return store;
 }
