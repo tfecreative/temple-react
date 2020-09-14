@@ -1,0 +1,17 @@
+@import "variables/borders";
+@import "variables/sizes";
+@import "variables/typography";
+@import "variables/colors";
+
+.menu {
+  border: $border-thick clr("accent", "dark");
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  width: 200px;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

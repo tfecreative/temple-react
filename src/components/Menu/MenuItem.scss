@@ -1,0 +1,15 @@
+@import "variables/borders";
+@import "variables/sizes";
+@import "variables/typography";
+@import "variables/colors";
+
+.menu-item {
+  background-color: $white;
+  padding: $spacing-sm;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+
+  &:hover {
+    background-color: clr('accent', 'light');
+  }
+}
