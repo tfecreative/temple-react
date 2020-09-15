@@ -7,7 +7,7 @@ export type NotificationOptions = {
 };
 
 export const defaultOptions: NotificationOptions = {
-  timeout: 50,
+  timeout: 2000,
 };
 
 /**

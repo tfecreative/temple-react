@@ -6,6 +6,7 @@ import axios, {
 } from "axios";
 import { httpConfig } from "./Config";
 import { HttpError } from "./Errors";
+import { store } from "store";
 
 /**
  * Axios HTTP Client
@@ -18,8 +19,8 @@ export abstract class HttpClient {
    *
    * @param config Axios request configuration
    */
-  public constructor(config: AxiosRequestConfig = httpConfig) {
-    this.client = axios.create(config);
+  public constructor(config?: AxiosRequestConfig) {
+    this.client = axios.create(config ?? httpConfig);
     this.initializeInterceptors();
   }
 
@@ -37,13 +38,19 @@ export abstract class HttpClient {
    * Set axios request and response interceptors
    */
   private initializeInterceptors() {
-    this.client.interceptors.request.use(
-      (param: AxiosRequestConfig) => ({
+    this.client.interceptors.request.use((param: AxiosRequestConfig) => {
+      let config = {
         baseUrl: process.env.REACT_APP_API_BASE_URL,
         ...param,
-      }),
-      this.handleError
-    );
+      };
+
+      const token = store.getState().auth.token;
+      const isApiCall = config.baseUrl === process.env.REACT_APP_API_BASE_URL;
+      if (token && isApiCall) {
+        config.headers.Authorization = `Token ${token}`;
+      }
+      return config;
+    }, this.handleError);
     this.client.interceptors.response.use(
       (r): AxiosResponse => r,
       this.handleError

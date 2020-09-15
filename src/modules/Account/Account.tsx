@@ -3,11 +3,7 @@ import "./Account.scss";
 
 class Account extends Component {
   render() {
-    return (
-      <section className="account">
-        Account...
-      </section>
-    );
+    return <section className="section account">Account...</section>;
   }
 }
 

@@ -1,9 +1,9 @@
 import React from "react";
 
-import Navbar from "modules/Navbar/Navbar";
+import { Navbar } from "modules/Navbar/Navbar";
 
 import Header from "modules/Layout/Header/Header";
-import { Notifications } from 'notifications/Components/Notifications'
+import { Notifications } from "notifications/Components/Notifications";
 
 import { IAppState } from "store/types";
 import { Provider } from "react-redux";

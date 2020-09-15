@@ -13,10 +13,10 @@ export const reducer = (
       return {
         notifications: [...state.notifications, action.payload],
       };
-    case notificationActions.REMOVE_NOTIFICATION_COMPLETED:
+    case notificationActions.REMOVE_NOTIFICATION_STARTED:
       return {
         notifications: state.notifications.filter(
-          (x) => x.id !== action.payload.id
+          (x) => x.id !== action.payload
         ),
       };
   }

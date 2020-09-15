@@ -1,0 +1,42 @@
+@import "variables/sizes";
+@import "variables/colors";
+@import "variables/borders";
+@import "variables/speeds";
+
+.avatar-badge {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  border: $border-thick clr("accent", "dark");
+  border-radius: 50%;
+  background: lightpink;
+  align-items: center;
+  justify-content: center;
+  transition: border-color $speed-fast;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+    border-color: clr("accent", "light");
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+
+  &__icon-image {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+
+  &__menu {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    border: 1px solid black;
+  }
+}

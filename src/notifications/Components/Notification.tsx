@@ -4,18 +4,30 @@ import "./Notification.scss";
 export interface INotificationProps {
   id: string;
   message: string;
-  onClose?: (notificationId: string) => any;
+  onClose: (id: string) => unknown;
 }
 
-export const NotificationComponent = (props: INotificationProps) => {
+export const NotificationComponent = ({
+  id,
+  message,
+  onClose,
+}: INotificationProps) => {
   return (
-    <div className="notification" id={props.id}>
+    <div className="notification" id={id}>
       <div className="notification__header">
-        <button onClick={() => props.onClose}>X</button>
+        <button
+          className="close-notification-button"
+          id="close-notification"
+          onClick={() => onClose(id)}
+        >
+          <i className="fa fa-times"></i>
+        </button>
       </div>
       <div className="notification__body">
-        {props.message && (
-          <span className="notification-message">{props.message}</span>
+        {message && (
+          <span className="notification-message" data-cy="notification-message">
+            {message}
+          </span>
         )}
       </div>
     </div>

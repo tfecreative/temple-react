@@ -1,35 +1,44 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 import "./Button.scss";
 
 type ButtonType = "button" | "submit";
 
 export interface Props {
   theme: string;
-  onClick?: (e: any) => void;
+  onClick?: () => any;
   children?: any;
-  disabled: boolean;
+  disabled?: boolean;
   type?: ButtonType;
   id: string;
+  className?: string;
 }
 
-export const Button = (props: Props) => {
-  function handleClick(event: Event) {
-    if (!props.onClick) {
+export const Button = ({
+  children,
+  className,
+  disabled,
+  id,
+  onClick,
+  theme,
+  type,
+}: Props) => {
+  function handleClick(event: MouseEvent) {
+    if (!onClick) {
       return;
     }
     event.preventDefault();
-    props.onClick(event);
+    onClick();
   }
   return (
     <button
-      onClick={() => handleClick}
-      className={"btn btn-" + props.theme}
-      id={props.id}
-      data-cy={props.id}
-      type={props.type}
-      disabled={props.disabled}
+      onClick={(e: MouseEvent) => handleClick(e)}
+      className={`btn btn-${theme} ${className}`}
+      id={id}
+      data-cy={id}
+      type={type}
+      disabled={disabled || false}
     >
-      {props.children}
+      {children}
     </button>
   );
 };

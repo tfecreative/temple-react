@@ -7,11 +7,11 @@
   width: 180px;
   height: 60px;
   border: $border;
-  border-color: clr('accent', 'dark');
+  border-color: clr("accent", "dark");
   border-radius: $border-radius;
   display: flex;
   flex-direction: column;
-  padding: $spacing-xs;
+  padding: $spacing-sm;
   box-shadow: $box-shadow;
   background-color: $white;
   margin-bottom: $spacing-sm;
@@ -19,5 +19,21 @@
   .notification-message {
     font-size: $font-size-sm;
     font-weight: $font-weight-semibold;
+  }
+}
+
+.close-notification-button {
+  width: 20px;
+  background: transparent;
+  padding: $spacing-xxs;
+  margin: 0;
+  border: 0;
+  position: absolute;
+  right: $spacing-xs;
+  top: $spacing-xxs;
+
+  &:hover {
+    color: $black;
+    cursor: pointer;
   }
 }

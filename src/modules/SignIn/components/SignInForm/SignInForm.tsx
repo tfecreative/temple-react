@@ -4,12 +4,14 @@ import { Form } from "components/Form/Form";
 import { FormHeader } from "components/Form/FormHeader";
 import { FormInput } from "components/FormInput/FormInput";
 import { FormButton } from "components/Form/FormButton";
+import { useDispatch } from "react-redux";
+import { signInRequest } from "store/auth/actions";
 
 const SignInForm = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = async (values: any) => {
-    try {
-      // TODO: sign in
-    } catch (e) {}
+    dispatch(signInRequest(values.username, values.password));
   };
 
   return (
