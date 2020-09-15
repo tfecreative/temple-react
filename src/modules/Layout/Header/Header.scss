@@ -1,6 +1,7 @@
 @import "variables/colors";
 @import "variables/sizes";
 @import "variables/typography";
+@import "mixins/breakpoints";
 
 .app-header {
   display: flex;
@@ -8,7 +9,7 @@
   background-color: clr("primary");
   height: 80px;
   align-items: center;
-  padding: 0 $spacing-lg;
+  padding: 0 $spacing-md;
 
   &__title {
     display: flex;

@@ -22,8 +22,7 @@ describe("accountService test", () => {
 
   it("Check if sign in is called", () => {
     const accountService = new AccountService();
-    const payload = { username: 'test', password: 'test' }
-    const resp = accountService.signIn(payload);
+    const resp = accountService.signIn('test', 'test');
     expect(resp).toEqual({token: 'thisisatesttoken'})
   });
 });

@@ -6,7 +6,7 @@ import axios, {
 } from "axios";
 import { httpConfig } from "./Config";
 import { HttpError } from "./Errors";
-import { store } from 'store'
+import { store } from "store";
 
 /**
  * Axios HTTP Client
@@ -44,7 +44,6 @@ export abstract class HttpClient {
         ...param,
       };
 
-      // set authorization header
       const token = store.getState().auth.token;
       const isApiCall = config.baseUrl === process.env.REACT_APP_API_BASE_URL;
       if (token && isApiCall) {

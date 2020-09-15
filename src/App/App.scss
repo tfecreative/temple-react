@@ -21,7 +21,7 @@
 }
 
 .section {
-  margin: $spacing-lg $spacing-sm;
+  margin: $spacing-lg $spacing-md;
   @include sm {
     margin: $spacing-xl;
   }

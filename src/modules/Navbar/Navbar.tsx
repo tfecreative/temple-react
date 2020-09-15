@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.scss";
 
-function Navbar() {
+export const Navbar = () => {
   return (
     <nav className="navbar">
       <ul className="navbar-menu">
@@ -46,6 +46,6 @@ function Navbar() {
       </ul>
     </nav>
   );
-}
+};
 
 export default Navbar;
